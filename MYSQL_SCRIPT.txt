@@ -1,0 +1,45 @@
+CREATE TABLE Project.Department
+(
+Dept_ID INTEGER PRIMARY KEY,
+Department_NAME VARCHAR(50)
+);
+CREATE TABLE Project.Employee
+(
+employee_id INTEGER PRIMARY KEY,
+First_name char(30),
+Last_name varchar(30),
+Manager_ID Integer,
+Department_ID INT,
+Salary DEC(10,2) DEFAULT 50000.02,
+CHECK (Salary > 5000),
+HIRE_DATE DATE,
+FOREIGN KEY (Department_ID)
+REFERENCES Department (Dept_ID)
+);
+
+INSERT INTO  Project.Department VALUES(3,'Data Engineering');
+INSERT INTO  Project.Department VALUES(4,'Data Science');
+INSERT INTO  Project.Department VALUES(10,'HR');
+INSERT INTO  Project.Department VALUES(22,'TECH');
+INSERT INTO  Project.Department VALUES(5,'MARKETING');
+INSERT INTO  Project.Department VALUES(8,'FINANCE');
+INSERT INTO  Project.Department VALUES(9,'ACCOUNTING');
+INSERT INTO  Project.Department VALUES(13,'IT');
+INSERT INTO  Project.Department VALUES(21,'Commercial');
+
+INSERT INTO Project.Employee VALUES(339,'Tom','Grant',333,10,25000.04,'2023-01-01');
+INSERT INTO Project.Employee VALUES(337,'Jame','Anderson',332,3,default,'2023-02-01');
+INSERT INTO Project.Employee VALUES(551,'ADAM','BOB',332,3,default,'2023-02-21');
+INSERT INTO Project.Employee VALUES(335,'John','cena',339,21,26000.80,'2015-01-01');
+INSERT INTO Project.Employee VALUES(333,'David','Austin',331,10,156600.00,'2018-01-01');
+INSERT INTO Project.Employee VALUES(338,'chris','Lee',332,5,12000.01,'2020-01-01');
+INSERT INTO Project.Employee VALUES(550,'LEWS','PIN',332,5,12000.01,'2020-02-01');
+INSERT INTO Project.Employee VALUES(334,'Alex','Hail',336,22,10000.03,'2021-01-01');
+INSERT INTO Project.Employee VALUES(440,'Donald','OConnell',336,22,10000.03,'2020-01-01');
+INSERT INTO Project.Employee VALUES(441,'Grant','DGRANT',336,22,10000.03,'2020-01-01');
+INSERT INTO Project.Employee VALUES(442,'Hartstein','MHARTSTE',336,22,10000.03,'2018-01-01');
+INSERT INTO Project.Employee VALUES(443,'Shelley','Higgins',339,5,15000.03,'2020-01-01');
+INSERT INTO Project.Employee VALUES(444,'Steven','King',339,5,17000.03,'2020-01-01');
+INSERT INTO Project.Employee VALUES(445,'Pat','SIM',339,5,23000.03,'2018-01-01');
+INSERT INTO Project.Employee VALUES(446,'GOLD','BURG',339,18,40000.03,'2019-01-01');
+INSERT INTO Project.Employee VALUES(447,'TIM','COOK',331,20,36000.03,'2019-05-01');
